@@ -18,16 +18,13 @@ area(4, 8)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 const crazySum = function(num1, num2){
-    somma = num1 + num2
-    if(num1 === num2){
-        console.log('Il valore è moltiplicato per 3', somma)
-        return somma * 3
+    if(num1 !== num2){
+        return num1 + num2
     }else
-        console.log('Il valore è', somma)
-        return somma
+        return (num1 + num2) * 3
 
 }
-crazySum(8, 8)
+conasole.log(crazySum(8, 8))
 
 /* ESERCIZIO 3
  Scrivi una funzione di nome "crazyDiff" che calcola la differenza assoluta tra un numero fornito come parametro e 19.
@@ -36,11 +33,10 @@ crazySum(8, 8)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 const crazyDiff = function(num){
-    const differenza = Math.abs(num - 19)
     if(num > 19){
-        return differenza * 3
+        return (n-19) * 3
     }else{
-        return differenza
+        return Math.abs(n-19)
     }
 }
 
@@ -51,8 +47,10 @@ const crazyDiff = function(num){
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 const boundary = function(n){
-   if(n >= 20 && b <= 100 || n === 400){
-    return n
+   if((n >= 20 && n <= 100) || n === 400){
+    return true
+   }else{
+    return false
    }
 }
 
@@ -63,8 +61,12 @@ const boundary = function(n){
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const epify = function (){
-
+const epify = function (str){
+    if(str.slice(0, 7) === 'EPICODE'){
+        return str
+    }else{
+        return 'Epicode' + str
+    }
 }
 
 /* ESERCIZIO 6
@@ -77,7 +79,11 @@ const check3and7 = function (n1){
     if(n1 <= 0){
         return false
 }else{
-    return n1 % 3 === 0 || n1 % 7 === 0
+    if( n1 % 3 === 0 || n1 % 7 === 0){
+        console.log('Il numero fornito è divisibile per 3 o per 7')
+    }else{
+        console.log('Il numero fornito non è divisibile per 3 o per 7')
+    }
 }
 }
 
@@ -86,8 +92,10 @@ const check3and7 = function (n1){
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const reverseString = function(){
-
+const reverseString = function(stringaInvertita){
+    let stringaComaArray = stringaInvertita.split('')
+    stringaComaArray.reverse()
+    let diNuovoComeStringa = stringaComaArray.join('')
 }
 
 /* ESERCIZIO 8
@@ -96,8 +104,13 @@ const reverseString = function(){
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const upperFirst = function(){
-
+const upperFirst = function(frase){
+    const parolaComeArray = frase.split(" ")
+    for(let i = 0 ; i<parolaComeArray; i++){
+        parolaComeArray[i]= parolaComeArray[i].charAt(0).toUpperCase() + parolaComeArray[i].slice(i)
+    }
+    const risultato = parolaComeArray.join(" ")
+    return risultato
 }
 
 /* ESERCIZIO 9
